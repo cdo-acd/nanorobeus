@@ -34,9 +34,8 @@ class NanorobeusBOF(BaseBOFTask):
         parser_arguments = self.parser.parse_args(arguments)
 
         if parser_arguments.arguments:
-            split_arguments = self.split_arguments(parser_arguments.arguments)
             returnList = [(BOFArgumentEncoding.STR, parser_arguments.command)]
-            for argument in split_arguments:
+            for argument in parser_arguments.arguments:
                 returnList.append((BOFArgumentEncoding.STR, argument))
             return returnList
 
